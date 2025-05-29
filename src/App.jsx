@@ -13,7 +13,8 @@ function App() {
 
   return (
     <>
-      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+      {/* como saco la info del json??? */}
+      {data.sprites.front_default}
     </>
   );
 }
