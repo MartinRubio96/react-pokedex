@@ -1,3 +1,31 @@
 .mainBox {
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(137, 43, 226, 0.05);
 }
+
+.searchBox {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.searchButton,.searchBar {
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.searchButton {
+    font-size: 20px;
+    margin-left: 8px;
+    width: 80px;
+}
+
+.searchBar {
+    width: 75vw;
+    font-size: 22px;
+}
+
