@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { Footer } from './assets/Footer';
+import { Header } from './assets/Header';
+import { Main } from './assets/Main';
 
 function App() {
   const [data, setData] = useState(null);
@@ -13,8 +16,9 @@ function App() {
 
   return (
     <>
-      {/* como saco la info del json??? */}
-      {data.sprites.front_default}
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 }

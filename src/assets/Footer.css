@@ -1,0 +1,13 @@
+h2 {
+    text-align: center;
+    -webkit-text-stroke: 0.5px white;
+    font-size: 34px;
+}
+
+.foot {
+    background-color: teal;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
