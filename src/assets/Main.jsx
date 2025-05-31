@@ -1,28 +1,28 @@
 import './Main.css'
 import { useState, useEffect } from 'react'
+import { PokemonCard } from './PokemonCard';
 
 
 export function Main() {
     const [data, setData] = useState(null);
 
-    function clickProcess() {
-        fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    useEffect(() => {
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(error));
-    }
+    }, [])
 
     return (
         <div className='mainBox'>
             <div className='searchBox'>
-                <input className='searchBar' type="text" placeholder='Name of a pokemon...'/>
-                <button className='searchButton' onClick={clickProcess}>Search</button>
+                <input className='searchBar' type="text" placeholder='Search pokemon by name...'/>
+                <button className='searchButton'>Search</button>
             </div>
-            <div className='pokemonCard'>
-                <p>ID:</p>
-                <p>Name:</p>
-                <p>Type:</p>
-                <p>Image:</p>
+            <div className='gallery'>
+                {data.results.map((pokemon) => (
+                    <PokemonCard name={pokemon.name} />
+                ))}
             </div>
         </div>
     )
