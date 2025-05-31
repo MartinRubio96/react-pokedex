@@ -21,8 +21,10 @@ export function Main() {
             </div>
             <div className='gallery'>
                 {data.results.map((pokemon) => (
-                    <PokemonCard name={pokemon.name} />
+                    // maybe pass the url and make a fetch from the card component... 10 fetch??
+                    <PokemonCard resource={pokemon.url}/>
                 ))}
+
             </div>
         </div>
     )
