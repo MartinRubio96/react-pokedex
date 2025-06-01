@@ -1,31 +1,34 @@
 import './Main.css'
 import { useState, useEffect } from 'react'
 import { PokemonCard } from './PokemonCard';
+import { SearchBox } from './SearchBox';
 
 
 export function Main() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=10/')
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(error));
     }, [])
 
-    return (
-        <div className='mainBox'>
-            <div className='searchBox'>
-                <input className='searchBar' type="text" placeholder='Search pokemon by name...'/>
-                <button className='searchButton'>Search</button>
+    if (!data) {
+        return (
+            <div className='mainBox'>
+                <p>Loading...</p>
             </div>
-            <div className='gallery'>
-                {data.results.map((pokemon) => (
-                    // maybe pass the url and make a fetch from the card component... 10 fetch??
-                    <PokemonCard resource={pokemon.url}/>
-                ))}
-
+        )
+    } else {
+        return (
+            <div className='mainBox'>
+                <div className='gallery'>
+                    <PokemonCard pokemon={data.results[0].url}/>
+                    <PokemonCard pokemon={data.results[1].url}/>
+                    <PokemonCard pokemon={data.results[2].url}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
