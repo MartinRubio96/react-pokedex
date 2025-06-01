@@ -46,7 +46,7 @@ export function Main() {
     } else {
         return (
             <div className='mainBox'>
-                <SearchBox />
+                {/* <SearchBox /> */}
                 <div className='galleryBox' >
                     <LeftArrow handleClick={leftClick} />
                     <div className='gallery'>

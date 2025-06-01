@@ -7,6 +7,7 @@ export function LeftArrow({ handleClick }) {
             xmlns="http://www.w3.org/2000/svg"
             cursor="pointer"
             onClick={handleClick}  
+            className="arrow"
         >
             <g 
                 transform="translate(-256.000000, -1087.000000)" 

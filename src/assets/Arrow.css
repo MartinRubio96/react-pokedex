@@ -1,0 +1,26 @@
+.arrow {
+    width: 64px; 
+    height: 64px;
+    transition: all 0.5s;
+}
+
+.arrow:hover {
+    width: 70px;
+    height: 70px;
+    transition: all 0.1s;
+}
+
+.arrow g {
+    transition: all 0.5s;
+}
+
+.arrow:hover g {
+    fill: rgb(0,128,128);
+    transition: all 0.1s;
+}
+
+.arrow:active g {
+    fill: aqua;
+}
+
+

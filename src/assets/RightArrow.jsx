@@ -1,16 +1,18 @@
+import './Arrow.css'
+
 export function RigthArrow({ handleClick }) {
     return (
         <svg 
-            width="64px" 
-            height="64px" 
+            
             viewBox="0 0 32 32" 
             xmlns="http://www.w3.org/2000/svg"
             cursor="pointer"
             onClick={handleClick}
+            className='arrow'
         >
             <g 
                 transform="translate(-308.000000, -1087.000000)" 
-                fill="#000000"
+                fill="rgb(0,0,0)"
             >
                 <path
                     d="M324,1117 C316.268,1117 310,1110.73 310,1103 C310,1095.27 316.268,1089 
