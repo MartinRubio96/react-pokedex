@@ -11,6 +11,10 @@ export function PokemonCard({ pokemon }) {
         .catch(error => console.error(error));
     }, [pokemon])
 
+    function Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     if (!data) {
         return (
             <div className='card'>
@@ -23,7 +27,7 @@ export function PokemonCard({ pokemon }) {
                 <p><img src={data.sprites.front_default} /></p>
                 <div className='cardFields'>
                     <p><b>ID:</b> {data.id}</p>
-                    <p><b>Name:</b> {data.name}</p>
+                    <p><b>Name:</b> {Capitalize(data.name)}</p>
                     <p><b>Height:</b> {data.height/10} m</p>
                     <p><b>Weight:</b> {data.weight/10} kg</p>
                 </div>
